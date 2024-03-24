@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "ea101efa-f1da-47f2-bcba-38b4bc0991e2",
+		"name": "apartament-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33668461"
+	},
+	"item": [
+		{
+			"name": "GetAllApartaments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/api/v1/apartament",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"v1",
+						"apartament"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByPriceQuery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/findByPrice?price=600",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"findByPrice"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "600"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByIdRoute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/findByIdRoute/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"findByIdRoute",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
