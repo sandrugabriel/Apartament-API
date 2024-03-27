@@ -1,4 +1,5 @@
-﻿using ApartamentAPI.Models;
+﻿using ApartamentAPI.Dto;
+using ApartamentAPI.Models;
 using ApartamentAPI.Repository.interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -40,5 +41,30 @@ namespace ApartamentAPI.Controllers
             var apartament = await _repository.GetById(id);
             return Ok(apartament);
         }
+
+
+        [HttpPost("/create")]
+        public async Task<ActionResult<Apartament>> Create([FromBody] CreateRequest request)
+        {
+            var apartament = await _repository.Create(request);
+            return Ok(apartament);
+
+        }
+
+        [HttpPut("/update")]
+        public async Task<ActionResult<Apartament>> Update([FromQuery] int id, [FromBody] UpdateRequest request)
+        {
+            var apartament = await _repository.Update(id, request);
+            return Ok(apartament);
+        }
+
+        [HttpDelete("/deleteById")]
+        public async Task<ActionResult<Apartament>> DeleteCarById([FromQuery] int id)
+        {
+            var apartament = await _repository.DeleteById(id);
+            return Ok(apartament);
+        }
+
+
     }
 }
