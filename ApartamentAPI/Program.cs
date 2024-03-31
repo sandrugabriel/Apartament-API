@@ -1,6 +1,8 @@
 using ApartamentAPI.Data;
 using ApartamentAPI.Repository;
 using ApartamentAPI.Repository.interfaces;
+using ApartamentAPI.Service;
+using ApartamentAPI.Service.interfaces;
 using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,6 +18,8 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddScoped<IRepository, RepositoryApartament>();
+builder.Services.AddScoped<IApartamentQueryService, ApartamentQueryService>();
+builder.Services.AddScoped<IApartamentCommandService,ApartamentsCommandService>();
 
 builder.Services.AddDbContext<AppDbContext>(option => option.UseMySql(builder.Configuration.GetConnectionString("Default")!,
     new MySqlServerVersion(new Version(8, 0, 6))));
