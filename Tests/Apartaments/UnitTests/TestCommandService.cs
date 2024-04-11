@@ -130,14 +130,14 @@ namespace Tests.Apartaments.UnitTests
         [Fact]
         public async Task Delete_ValidData()
         {
-            Apartament apartament = TestApartamentFactory.CreateApartament(50);
+            var apartament = TestApartamentFactory.CreateApartament(1);
 
-            _mock.Setup(repo => repo.GetById(It.IsAny<int>())).ReturnsAsync(apartament);
+            _mock.Setup(repo=>repo.GetById(It.IsAny<int>())).ReturnsAsync(apartament);
 
-            var restul = await _commandService.DeleteApartament(50);
+            var result = await _commandService.DeleteApartament(1);
 
-            Assert.NotNull(restul);
-            Assert.Equal(apartament, restul);
+            Assert.NotNull(result);
+            Assert.Equal(apartament,result);
         }
 
     }
