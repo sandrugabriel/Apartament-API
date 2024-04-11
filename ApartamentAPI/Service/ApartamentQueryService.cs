@@ -46,7 +46,7 @@ namespace ApartamentAPI.Service
 
             if(apartament == null)
             {
-                throw new ItemsDoNotExists(Constants.Constants.ItemDoesNotExist);
+                throw new ItemDoesNotExist(Constants.Constants.ItemDoesNotExist);
             }
 
             return apartament;
