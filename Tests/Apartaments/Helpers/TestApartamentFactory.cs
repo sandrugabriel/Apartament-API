@@ -15,9 +15,9 @@ namespace Tests.Apartaments.Helpers
             return new Apartament
             {
                 Id = id,
-                Room = id / 2,
+                Room = id + 2,
                 Address = "test" + id,
-                Price = (id+5) * 1000
+                Price = (id+5) * 10
 
             };
         }

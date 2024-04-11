@@ -55,7 +55,7 @@ namespace ApartamentAPI.Service
             {
                 throw new ItemDoesNotExist(Constants.Constants.ItemDoesNotExist);
             }
-            apartament = await _repository.DeleteById(id);
+            await _repository.DeleteById(id);
             return apartament;
         }
 
