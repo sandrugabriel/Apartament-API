@@ -39,7 +39,7 @@ namespace ApartamentAPI.Service
             }
 
 
-            if (apartament.Price <= 500)
+            if (request.Price <= 500)
             {
                 throw new InvalidPrice(Constants.Constants.InvalidPrice);
             }
